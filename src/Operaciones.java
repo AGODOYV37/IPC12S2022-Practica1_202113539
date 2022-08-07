@@ -210,6 +210,7 @@ public class Operaciones {
 
     }
     public void OpTrigonometria(){
+        double pi = 3.1416;
         int opTrigo = 0;
         System.out.println(menu.trigonometria());
         do {
@@ -223,8 +224,10 @@ public class Operaciones {
         } while (opTrigo != 1 && opTrigo != 2 && opTrigo != 3 && opTrigo != 4);
         switch (opTrigo) {
             case 1:
-                System.out.println("Ingrese el angulo deseado (en radianes) para calcular su Seno:");
+                System.out.println("Ingrese el angulo deseado (en grados) para calcular su Seno:");
                 double var = scanner.nextDouble();
+                var=var*(pi/180);
+
                 System.out.println("Ingrese el iterador i (1-20):");
                 int ite = scanner.nextInt();
                 double arr = 0;
@@ -233,15 +236,15 @@ public class Operaciones {
                 for (int i = 0; i < ite; i++) {
                     arr = menu.potencia(-1, i) * menu.potencia(var, 2 * i + 1);
                     abb = menu.factorial(2 * i + 1);
-                    senT = senT + arr / abb;
+                    senT = (senT + arr / abb);
                 }
                 System.out.println("El total es:" + senT);
                 SalidaTri();
                 break;
 
             case 2:
-                System.out.println("Ingrese el angulo deseado (en radianes) para calcular su Coseno:");
-                double var1 = scanner.nextDouble();
+                System.out.println("Ingrese el angulo deseado (en grados) para calcular su Coseno:");
+                double var1 = scanner.nextDouble()*(pi/180);
                 System.out.println("Ingrese el iterador i (1-20):");
                 int ite1 = scanner.nextInt();
                 double arr1 = 0;
@@ -250,15 +253,15 @@ public class Operaciones {
                 for (int i = 0; i < ite1; i++) {
                     arr1 = menu.potencia(-1, i) * menu.potencia(var1, 2 * i);
                     abb1 = menu.factorial(2 * i);
-                    cosT = cosT + arr1 / abb1;
+                    cosT = (cosT + arr1 / abb1);
                 }
                 System.out.println("El total es:" + cosT);
                 SalidaTri();
                 break;
 
             case 3:
-                System.out.println("Ingrese el angulo deseado (en radianes) para calcular su Tangente:");
-                double var2 = scanner.nextDouble();
+                System.out.println("Ingrese el angulo deseado (en grados) para calcular su Tangente:");
+                double var2 = scanner.nextDouble()*(pi/180);
                 System.out.println("Ingrese el iterador i (1-20):");
                 int ite2 = scanner.nextInt();
                 double arrs = 0;
@@ -277,7 +280,7 @@ public class Operaciones {
                     abbc = menu.factorial(2 * i);
                     cosTc = cosTc + arrc / abbc;
                 }
-                System.out.println("El total es" + senTs / cosTc);
+                System.out.println("El total es" + (senTs / cosTc));
                 SalidaTri();
                 break;
 
